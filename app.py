@@ -70,13 +70,6 @@ def index():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    show_loading_overlay()
-
-    # Simulate a time-consuming task (replace this with your actual processing)
-    time.sleep(2)
-
-    # Hide loading overlay
-    hide_loading_overlay()
     if request.method == 'POST':
         # Get user input from the form
         nitrogen = float(request.form['nitrogen'])
