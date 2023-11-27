@@ -1,0 +1,8 @@
+/* static/styles.css */
+.crop-image {
+    width: 150px;  /* Set your desired width */
+    height: 150px; /* Set your desired height */
+    object-fit: cover; /* Maintain aspect ratio and cover the entire box */
+    border: 1px solid #ddd; /* Optional: Add a border for better visual separation */
+    margin-right: 10px; /* Optional: Add margin for better spacing between images */
+}

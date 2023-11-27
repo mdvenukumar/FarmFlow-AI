@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmFlow AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body>
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+    <div class="container">
+        <h1>Crop Prediction</h1>
+        <form action="/predict" method="post">
+            <label for="nitrogen">Nitrogen Level:</label>
+            <input type="text" name="nitrogen" required>
+
+            <label for="phosphorus">Phosphorus Level:</label>
+            <input type="text" name="phosphorus" required>
+
+            <label for="potassium">Potassium Level:</label>
+            <input type="text" name="potassium" required>
+
+            <label for="temperature">Temperature:</label>
+            <input type="text" name="temperature" required>
+
+            <label for="humidity">Humidity:</label>
+            <input type="text" name="humidity" required>
+
+            <label for="ph">pH:</label>
+            <input type="text" name="ph" required>
+
+            <label for="rainfall">Rainfall:</label>
+            <input type="text" name="rainfall" required>
+
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+    
+</body>
+</html>

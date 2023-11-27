@@ -1,0 +1,38 @@
+<!-- templates/result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Result</h1>
+
+        <div class="result-section">
+            <p style="color: black" class="result-label" >Accurate Plant that is Suitable for your Soil Type</p>
+            <p class="result-value">{{ predicted_label }}</p>
+            {% if predicted_label_image %}
+                <img class="crop-image" src="{{ predicted_label_image }}" alt="{{ predicted_label }}">
+            {% endif %}
+        </div>
+
+        {% if other_nearest_crops %}
+            <div class="other-crops-section">
+                <p style="color: black" class="other-crops-label">Your Soil can also have </p>
+                <ul class="other-crops-list">
+                    {% for crop in other_nearest_crops %}
+                        <li class="other-crop">{{ crop }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% elif no_other_crops_message %}
+            <p class="no-crops-message">{{ no_other_crops_message }}</p>
+        {% endif %}
+
+        <a href="/"><button class="back-button">Back to Home</button></a>
+    </div>
+</body>
+</html>

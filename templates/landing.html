@@ -1,0 +1,27 @@
+<!-- templates/landing.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmFlow AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='landing.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>FarmFlow AI</h1>
+        <p>Use our tool to predict the best crop based on environmental factors.</p>
+        <a href="/predict"><button>Get Started</button></a>
+
+        <!-- New plants container -->
+        <div class="plants-container">
+            {% for plant in plants %}
+                <div class="plant-card">
+                    <img class="plant-image" src="{{ plant.image_url }}" alt="{{ plant.label }}">
+                    <p class="plant-label">{{ plant.label }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
